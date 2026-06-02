@@ -1,0 +1,42 @@
+#########################################################################
+Test Case ID: 1
+Test Case Name: User Login with Valid Credentials
+Priority: High
+
+Preconditions:
+- User account exists with username "user@example.com" and password "ValidPass123"
+- Application is accessible and running
+- User is logged out
+
+Test Data:
+- Username: user@example.com
+- Password: ValidPass123
+
+Test Steps:
+
+Step 1: Navigate to application URL (https://app.example.com)
+Expected Result: Application homepage loads with "Login" button visible in top right corner
+
+
+Step 2: Click "Login" button
+Expected Result: Login page displays with username field, password field, and "Submit" button
+
+
+Step 3: Enter username "user@example.com" in username field
+Expected Result: Username field accepts input and displays entered value
+
+
+Step 4: Enter password "ValidPass123" in password field
+Expected Result: Password field accepts input and displays masked characters (dots or asterisks)
+
+
+Step 5: Click "Submit" button
+Expected Result: 
+
+- User redirects to dashboard page
+- Welcome message displays: "Welcome, Test User"
+- User menu shows logged-in state with user email
+- Session token created (verify via browser developer tools if needed)
+
+
+#########################################################################
