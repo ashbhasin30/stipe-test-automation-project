@@ -1,42 +1,92 @@
-#########################################################################
-Test Case ID: 1
-Test Case Name: User Login with Valid Credentials
-Priority: High
+####################################################################################################################
+TEST CASE ID: 1
+TEST CASE NAME: Login with valid credentials for the test account
+PRIORITY: High
 
-Preconditions:
-- User account exists with username "user@example.com" and password "ValidPass123"
+PRECONDITIONS:
+- Test account exists with email [email_address] and password [password]
 - Application is accessible and running
-- User is logged out
+- Test account is logged out
 
-Test Data:
-- Username: user@example.com
-- Password: ValidPass123
+TEST DATA:
+- Username: [EMAIL_ADDRESS]
+- Password: [PASSWORD]
+- Account Name: [ACCOUNT_NAME]
+- Account ID: [ACCOUNT_ID]
 
-Test Steps:
+TEST STEPS:
 
-Step 1: Navigate to application URL (https://app.example.com)
-Expected Result: Application homepage loads with "Login" button visible in top right corner
+Step 1: Navigate to application URL (https://dashboard.stripe.com/)
+Expected Result: Website loads successfully and the page presents an email, password, and a login button
+
+Step 2: Enter [EMAIL_ADDRESS] in the email field
+Expected Result: [EMAIL_ADDRESS] displays in the field
+
+Step 3: Enter [PASSWORD] in the password field
+Expected Result: PASSWORD field accepts input and displays [PASSWORD]
+
+Step 4: Click "Login" button
+Expected Results:
+    - User redirects to the TEST dashboard page:
+      https://dashboard.stripe.com/[account_id]/test/dashboard
+    - Top headline displays: "You're testing in a sandbox. 
+      Changes you make here don't affect your live account."
+    - Account name is displayed as [ACCOUNT_NAME] on the top left panel.
+
+####################################################################################################################
+TEST CASE ID: 
+TEST CASE NAME: 
+PRIORITY: 
+
+PRECONDITIONS:
+
+TEST DATA:
 
 
-Step 2: Click "Login" button
-Expected Result: Login page displays with username field, password field, and "Submit" button
 
 
-Step 3: Enter username "user@example.com" in username field
-Expected Result: Username field accepts input and displays entered value
+TEST STEPS:
 
-
-Step 4: Enter password "ValidPass123" in password field
-Expected Result: Password field accepts input and displays masked characters (dots or asterisks)
-
-
-Step 5: Click "Submit" button
+Step 1: 
 Expected Result: 
 
-- User redirects to dashboard page
-- Welcome message displays: "Welcome, Test User"
-- User menu shows logged-in state with user email
-- Session token created (verify via browser developer tools if needed)
+Step 2: 
+Expected Result:
+
+Step 3: 
+Expected Result: 
+
+Step 4: 
+Expected Result: 
+
+####################################################################################################################
+TEST CASE ID: 2
+TEST CASE NAME: Create a payment link for an existing product
+PRIORITY: High
+
+PRECONDITIONS:
+- Logged in to the test account
+
+TEST DATA:
+- Card Number: [TEST_SUCCESSFUL_VISA_CARD_ONE]
+
+TEST STEPS:
+
+Step 1: In the Dashboard, open the Payment Links page and 
+click "+ Create test payment link".
+Expected Result: The "Create a payment link" window opens with 2 panels where
+"Select type" is on the left and "Preview" on the right. 
+
+Step 2: Select "Products or subscriptions" for the type. 
+Under "Payment page", select an existing product from the product dropdown 
+called "Test Product One".
+Expected Result: The page updates and it shows the product name, cost, quantity 
+in the box under "Payment Page".
+
+Step 3: Click "Create Link".
+Expected Result: The page navigates to the newly created product link. 
+It shows the product name as a headline.
 
 
-#########################################################################
+
+####################################################################################################################
